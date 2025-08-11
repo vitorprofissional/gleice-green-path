@@ -62,140 +62,7 @@ const GreenCardLanding = () => {
     answer: "O investimento para a Sessão de Clareza é de apenas $70 - muito menos do que você gastaria em uma consulta jurídica tradicional, mas com um atendimento muito mais próximo e humanizado."
   }];
   return <div className="min-h-screen bg-background">
-      {/* HERO SECTION */}
-      <section className="relative py-8 sm:py-12 lg:py-20 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-32 sm:w-64 h-32 sm:h-64 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-48 sm:w-96 h-48 sm:h-96 bg-primary rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
-            {/* Hero Content */}
-            <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-2 lg:order-1">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
-                  <Star className="w-3 sm:w-4 h-3 sm:h-4" />
-                  <span className="text-xs sm:text-sm">+100 pessoas já conquistaram seus Green Cards</span>
-                </div>
-                
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-bold text-foreground leading-tight">
-                  Para a mulher brasileira que se sente 
-                  <span className="text-primary"> perdida e sobrecarregada</span> 
-                  no processo do Green Card
-                </h1>
-                
-                <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-muted-foreground leading-relaxed">
-                  Descubra em <strong>30 minutos</strong> o plano exato para transformar a confusão em clareza e o medo em confiança
-                </p>
-              </div>
-
-              {/* Social Proof */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6 pt-2 sm:pt-4">
-                <div className="flex -space-x-2 sm:-space-x-3">
-                  {[1, 2, 3, 4].map(i => <div key={i} className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-primary/20 rounded-full border-2 border-background flex items-center justify-center">
-                      <Users className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-primary" />
-                    </div>)}
-                </div>
-                <div className="text-xs sm:text-sm text-muted-foreground">
-                  <div className="flex items-center space-x-1 mb-1">
-                    {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3 sm:w-4 h-3 sm:h-4 fill-primary text-primary" />)}
-                  </div>
-                  <span className="font-medium text-xs sm:text-sm">Mais de 100 mulheres já conquistaram seus sonhos</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* Form Card */}
-            <Card className="relative p-4 sm:p-6 lg:p-8 shadow-2xl border-0 bg-background/95 backdrop-blur w-full order-1 lg:order-2">
-              <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
-                
-              </div>
-              
-              <CardContent className="space-y-4 sm:space-y-6 pt-3 sm:pt-4 p-0">
-                <div className="text-center space-y-1 sm:space-y-2">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground">
-                    Sessão de Clareza de 30 Minutos
-                  </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground">
-                    Totalmente gratuita • Sem compromisso
-                  </p>
-                </div>
-                
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <Label htmlFor="name" className="text-xs sm:text-sm font-medium">Nome completo</Label>
-                    <Input id="name" placeholder="Digite seu nome completo" {...register("name", {
-                    required: "Nome é obrigatório"
-                  })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
-                    {errors.name && <p className="text-xs sm:text-sm text-destructive">{errors.name.message}</p>}
-                  </div>
-                  
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <Label htmlFor="email" className="text-xs sm:text-sm font-medium">Seu melhor e-mail</Label>
-                    <Input id="email" type="email" placeholder="exemplo@email.com" {...register("email", {
-                    required: "E-mail é obrigatório",
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "E-mail inválido"
-                    }
-                  })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
-                    {errors.email && <p className="text-xs sm:text-sm text-destructive">{errors.email.message}</p>}
-                  </div>
-                  
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <Label htmlFor="phone" className="text-xs sm:text-sm font-medium">WhatsApp</Label>
-                    <Input id="phone" placeholder="(11) 99999-9999" {...register("phone", {
-                    required: "WhatsApp é obrigatório"
-                  })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
-                    {errors.phone && <p className="text-xs sm:text-sm text-destructive">{errors.phone.message}</p>}
-                  </div>
-                  
-                  <Button type="submit" disabled={isSubmitting} className="w-full h-12 sm:h-14 text-sm sm:text-base lg:text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg transform transition-all duration-200 hover:scale-105 touch-manipulation mx-0 px-0">
-                    {isSubmitting ? "Enviando..." : "🎯 QUERO MINHA CONSULTORIA GRATUITA"}
-                  </Button>
-                  
-                  <p className="text-[10px] sm:text-xs text-center text-muted-foreground leading-relaxed">
-                    ✅ 100% Gratuito • ✅ Sem spam • ✅ Seus dados estão seguros
-                  </p>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* PAIN POINTS SECTION */}
-      <section className="py-12 sm:py-16 lg:py-20 px-3 sm:px-4 bg-muted/30">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 text-foreground">
-              Você se sente assim?
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground px-2">
-              Se você se identificou com pelo menos 3 itens abaixo, essa consultoria é para você
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
-            {painPoints.map((point, index) => <Card key={index} className="p-4 sm:p-6 border-l-4 border-l-primary bg-background hover:shadow-lg transition-all duration-300">
-                <CardContent className="flex items-start space-x-3 sm:space-x-4 p-0">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-5 sm:w-6 h-5 sm:h-6 bg-primary/10 rounded-full flex items-center justify-center">
-                      <CheckCircle className="w-3 sm:w-4 h-3 sm:h-4 text-primary" />
-                    </div>
-                  </div>
-                  <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-foreground font-medium">
-                    {point}
-                  </p>
-                </CardContent>
-              </Card>)}
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT GLEICE SECTION */}
+      {/* SECTION 1: ABOUT GLEICE WITH PHOTO */}
       <section className="py-12 sm:py-16 lg:py-20 px-3 sm:px-4 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
@@ -252,6 +119,136 @@ const GreenCardLanding = () => {
                   </div>)}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2: HEADLINE AND SUB-HEADLINE */}
+      <section className="relative py-8 sm:py-12 lg:py-20 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-32 sm:w-64 h-32 sm:h-64 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-48 sm:w-96 h-48 sm:h-96 bg-primary rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center space-y-4 sm:space-y-6 lg:space-y-8 max-w-4xl mx-auto">
+            <div className="space-y-3 sm:space-y-4">
+              <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
+                <Star className="w-3 sm:w-4 h-3 sm:h-4" />
+                <span className="text-xs sm:text-sm">+100 pessoas já conquistaram seus Green Cards</span>
+              </div>
+              
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-bold text-foreground leading-tight">
+                Para a mulher brasileira que se sente 
+                <span className="text-primary"> perdida e sobrecarregada</span> 
+                no processo do Green Card
+              </h1>
+              
+              <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-muted-foreground leading-relaxed">
+                Descubra em <strong>30 minutos</strong> o plano exato para transformar a confusão em clareza e o medo em confiança
+              </p>
+            </div>
+
+            {/* Social Proof */}
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6 pt-2 sm:pt-4">
+              <div className="flex -space-x-2 sm:-space-x-3">
+                {[1, 2, 3, 4].map(i => <div key={i} className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-primary/20 rounded-full border-2 border-background flex items-center justify-center">
+                    <Users className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-primary" />
+                  </div>)}
+              </div>
+              <div className="text-xs sm:text-sm text-muted-foreground">
+                <div className="flex items-center justify-center space-x-1 mb-1">
+                  {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3 sm:w-4 h-3 sm:h-4 fill-primary text-primary" />)}
+                </div>
+                <span className="font-medium text-xs sm:text-sm">Mais de 100 mulheres já conquistaram seus sonhos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3: FORM */}
+      <section className="py-12 sm:py-16 lg:py-20 px-3 sm:px-4 bg-muted/30">
+        <div className="max-w-2xl mx-auto">
+          <Card className="relative p-4 sm:p-6 lg:p-8 shadow-2xl border-0 bg-background/95 backdrop-blur w-full">
+            <CardContent className="space-y-4 sm:space-y-6 pt-3 sm:pt-4 p-0">
+              <div className="text-center space-y-1 sm:space-y-2">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground">
+                  Sessão de Clareza de 30 Minutos
+                </h3>
+                <p className="text-sm sm:text-base text-muted-foreground">
+                  Totalmente gratuita • Sem compromisso
+                </p>
+              </div>
+              
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
+                <div className="space-y-1.5 sm:space-y-2">
+                  <Label htmlFor="name" className="text-xs sm:text-sm font-medium">Nome completo</Label>
+                  <Input id="name" placeholder="Digite seu nome completo" {...register("name", {
+                  required: "Nome é obrigatório"
+                })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
+                  {errors.name && <p className="text-xs sm:text-sm text-destructive">{errors.name.message}</p>}
+                </div>
+                
+                <div className="space-y-1.5 sm:space-y-2">
+                  <Label htmlFor="email" className="text-xs sm:text-sm font-medium">Seu melhor e-mail</Label>
+                  <Input id="email" type="email" placeholder="exemplo@email.com" {...register("email", {
+                  required: "E-mail é obrigatório",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "E-mail inválido"
+                  }
+                })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
+                  {errors.email && <p className="text-xs sm:text-sm text-destructive">{errors.email.message}</p>}
+                </div>
+                
+                <div className="space-y-1.5 sm:space-y-2">
+                  <Label htmlFor="phone" className="text-xs sm:text-sm font-medium">WhatsApp</Label>
+                  <Input id="phone" placeholder="(11) 99999-9999" {...register("phone", {
+                  required: "WhatsApp é obrigatório"
+                })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
+                  {errors.phone && <p className="text-xs sm:text-sm text-destructive">{errors.phone.message}</p>}
+                </div>
+                
+                <Button type="submit" disabled={isSubmitting} className="w-full h-12 sm:h-14 text-sm sm:text-base lg:text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg transform transition-all duration-200 hover:scale-105 touch-manipulation mx-0 px-0">
+                  {isSubmitting ? "Enviando..." : "🎯 QUERO MINHA CONSULTORIA GRATUITA"}
+                </Button>
+                
+                <p className="text-[10px] sm:text-xs text-center text-muted-foreground leading-relaxed">
+                  ✅ 100% Gratuito • ✅ Sem spam • ✅ Seus dados estão seguros
+                </p>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* PAIN POINTS SECTION */}
+      <section className="py-12 sm:py-16 lg:py-20 px-3 sm:px-4 bg-background">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 text-foreground">
+              Você se sente assim?
+            </h2>
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground px-2">
+              Se você se identificou com pelo menos 3 itens abaixo, essa consultoria é para você
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
+            {painPoints.map((point, index) => <Card key={index} className="p-4 sm:p-6 border-l-4 border-l-primary bg-background hover:shadow-lg transition-all duration-300">
+                <CardContent className="flex items-start space-x-3 sm:space-x-4 p-0">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-5 sm:w-6 h-5 sm:h-6 bg-primary/10 rounded-full flex items-center justify-center">
+                      <CheckCircle className="w-3 sm:w-4 h-3 sm:h-4 text-primary" />
+                    </div>
+                  </div>
+                  <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-foreground font-medium">
+                    {point}
+                  </p>
+                </CardContent>
+              </Card>)}
           </div>
         </div>
       </section>
