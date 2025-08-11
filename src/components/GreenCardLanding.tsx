@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CheckCircle, Heart, Users, Shield, Clock, Star, ChevronDown } from "lucide-react";
 interface FormData {
   name: string;
@@ -24,14 +25,16 @@ const GreenCardLanding = () => {
     toast
   } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     setTimeout(() => {
       toast({
         title: "Formulário enviado com sucesso!",
-        description: "Entraremos em contato em breve para agendar sua consultoria."
+        description: "Redirecionando para a próxima etapa..."
       });
       setIsSubmitting(false);
+      navigate('/obrigada');
     }, 1000);
   };
   const painPoints = ["Perdida em uma pilha de formulários e documentos que parecem não ter fim?", "Com medo de cometer um erro que possa levar à negação do seu sonho?", "Cansada de informações contraditórias que te deixam andando em círculos?", "Sozinha e sobrecarregada, sentindo que ninguém entende o peso que você carrega?", "Insegura até para conversar com seu noivo ou marido sobre os próximos passos?"];
