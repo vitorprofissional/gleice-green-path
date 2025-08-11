@@ -63,46 +63,46 @@ const GreenCardLanding = () => {
   }];
   return <div className="min-h-screen bg-background">
       {/* HERO SECTION */}
-      <section className="relative py-8 sm:py-12 lg:py-20 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden">
+      <section className="relative py-8 sm:py-12 lg:py-32 xl:py-40 px-3 sm:px-4 lg:px-8 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-32 sm:w-64 h-32 sm:h-64 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-48 sm:w-96 h-48 sm:h-96 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute top-10 sm:top-20 lg:top-32 left-5 sm:left-10 lg:left-16 w-32 sm:w-64 lg:w-80 xl:w-96 h-32 sm:h-64 lg:h-80 xl:h-96 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 sm:bottom-20 lg:bottom-32 right-5 sm:right-10 lg:right-16 w-48 sm:w-96 lg:w-[28rem] xl:w-[32rem] h-48 sm:h-96 lg:h-[28rem] xl:h-[32rem] bg-primary rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-20 xl:gap-24 items-center">
             {/* Hero Content */}
-            <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-2 lg:order-1">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-10 xl:space-y-12 order-2 lg:order-1">
               <div className="space-y-3 sm:space-y-4">
-                <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
+                <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 lg:py-3 rounded-full text-xs sm:text-sm lg:text-base font-medium">
                   <Star className="w-3 sm:w-4 h-3 sm:h-4" />
-                  <span className="text-xs sm:text-sm">+100 pessoas já conquistaram seus Green Cards</span>
+                  <span className="text-xs sm:text-sm lg:text-base">+100 pessoas já conquistaram seus Green Cards</span>
                 </div>
                 
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-bold text-foreground leading-tight">
+                <h1 className="text-2xl sm:text-3xl lg:text-5xl xl:text-7xl font-bold text-foreground leading-tight lg:leading-tight xl:leading-tight">
                   Para a mulher brasileira que se sente 
                   <span className="text-primary"> perdida e sobrecarregada </span> 
                   no processo do Green Card
                 </h1>
                 
-                <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-muted-foreground leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-2xl xl:text-3xl text-muted-foreground leading-relaxed lg:leading-relaxed xl:leading-relaxed">
                   Descubra em <strong>30 minutos</strong> o plano exato para transformar a confusão em clareza e o medo em confiança
                 </p>
               </div>
 
               {/* Social Proof */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6 pt-2 sm:pt-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-8 xl:space-x-10 pt-2 sm:pt-4 lg:pt-6">
                 <div className="flex -space-x-2 sm:-space-x-3">
-                  {[1, 2, 3, 4].map(i => <div key={i} className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-primary/20 rounded-full border-2 border-background flex items-center justify-center">
-                      <Users className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-primary" />
+                  {[1, 2, 3, 4].map(i => <div key={i} className="w-8 sm:w-10 lg:w-14 xl:w-16 h-8 sm:h-10 lg:h-14 xl:h-16 bg-primary/20 rounded-full border-2 border-background flex items-center justify-center">
+                      <Users className="w-4 sm:w-5 lg:w-7 xl:w-8 h-4 sm:h-5 lg:h-7 xl:h-8 text-primary" />
                     </div>)}
                 </div>
-                <div className="text-xs sm:text-sm text-muted-foreground">
+                <div className="text-xs sm:text-sm lg:text-base text-muted-foreground">
                   <div className="flex items-center space-x-1 mb-1">
-                    {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3 sm:w-4 h-3 sm:h-4 fill-primary text-primary" />)}
+                    {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5 fill-primary text-primary" />)}
                   </div>
-                  <span className="font-medium text-xs sm:text-sm">Mais de 100 mulheres já conquistaram seus sonhos</span>
+                  <span className="font-medium text-xs sm:text-sm lg:text-base">Mais de 100 mulheres já conquistaram seus sonhos</span>
                 </div>
               </div>
             </div>
@@ -110,7 +110,7 @@ const GreenCardLanding = () => {
           </div>
           
           {/* Form Card */}
-          <Card className="relative p-4 sm:p-6 lg:p-8 shadow-2xl border-0 bg-background/95 backdrop-blur w-full max-w-md mx-auto mt-8 sm:mt-12">
+          <Card className="relative p-4 sm:p-6 lg:p-10 xl:p-12 shadow-2xl border-0 bg-background/95 backdrop-blur w-full max-w-md lg:max-w-lg xl:max-w-xl mx-auto mt-8 sm:mt-12 lg:mt-16">
             <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
               
             </div>
