@@ -63,36 +63,36 @@ const GreenCardLanding = () => {
   }];
   return <div className="min-h-screen bg-background">
       {/* SECTION 1: ABOUT GLEICE WITH PHOTO */}
-      <section className="py-12 sm:py-16 lg:py-20 px-3 sm:px-4 bg-background">
+      <section className="py-12 sm:py-16 lg:py-24 xl:py-32 px-3 sm:px-4 bg-background">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-            <div className="relative w-full max-w-md mx-auto lg:max-w-none order-1 lg:order-1">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 xl:gap-24 items-center lg:min-h-[80vh]">
+            <div className="relative w-full max-w-md mx-auto lg:max-w-lg xl:max-w-xl order-1 lg:order-1">
               <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-primary/20 to-primary/10 rounded-2xl sm:rounded-3xl blur"></div>
               <img src="/lovable-uploads/eea35aa1-010e-415d-a589-673fe11473c3.png" alt="Gleice Oliveira - Especialista em Green Card" className="relative w-full h-auto rounded-xl sm:rounded-2xl shadow-2xl" />
               
               {/* Stats Overlay */}
-              <div className="absolute -bottom-3 sm:-bottom-6 -right-3 sm:-right-6 bg-primary text-primary-foreground p-3 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl">
+              <div className="absolute -bottom-3 sm:-bottom-6 lg:-bottom-8 xl:-bottom-10 -right-3 sm:-right-6 lg:-right-8 xl:-right-10 bg-primary text-primary-foreground p-3 sm:p-6 lg:p-8 xl:p-10 rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-xl">
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold">+100</div>
-                  <div className="text-xs sm:text-sm opacity-90">Green Cards Aprovados</div>
+                  <div className="text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold">+100</div>
+                  <div className="text-xs sm:text-sm lg:text-base xl:text-lg opacity-90">Green Cards Aprovados</div>
                 </div>
               </div>
             </div>
             
-            <div className="space-y-6 sm:space-y-8 order-2 lg:order-2">
-              <div className="space-y-4 sm:space-y-6">
-                <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
-                  <Heart className="w-3 sm:w-4 h-3 sm:h-4" />
+            <div className="space-y-6 sm:space-y-8 lg:space-y-10 xl:space-y-12 order-2 lg:order-2">
+              <div className="space-y-4 sm:space-y-6 lg:space-y-8">
+                <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 sm:px-4 lg:px-5 xl:px-6 py-1.5 sm:py-2 lg:py-3 rounded-full text-xs sm:text-sm lg:text-base xl:text-lg font-medium">
+                  <Heart className="w-3 sm:w-4 lg:w-5 xl:w-6 h-3 sm:h-4 lg:h-5 xl:h-6" />
                   <span>De imigrante para imigrante</span>
                 </div>
                 
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground">
+                <h2 className="text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight">
                   Eu sei <span className="text-primary">exatamente</span> como você se sente
                 </h2>
               </div>
               
-              <div className="space-y-4 sm:space-y-6 text-sm sm:text-base lg:text-lg leading-relaxed text-muted-foreground">
-                <p className="text-base sm:text-lg lg:text-xl font-medium text-foreground">
+              <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed text-muted-foreground">
+                <p className="text-base sm:text-lg lg:text-xl xl:text-2xl font-medium text-foreground">
                   "Olá, meu nome é Gleice. E eu <strong>não sou advogada</strong>."
                 </p>
                 <p>
@@ -107,14 +107,14 @@ const GreenCardLanding = () => {
               </div>
 
               {/* Benefits */}
-              <div className="grid grid-cols-1 gap-3 sm:gap-4 pt-2 sm:pt-4">
-                {benefits.map((benefit, index) => <div key={index} className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-primary/5 rounded-lg">
+              <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:gap-6 pt-2 sm:pt-4 lg:pt-6">
+                {benefits.map((benefit, index) => <div key={index} className="flex items-center space-x-3 sm:space-x-4 lg:space-x-6 p-3 sm:p-4 lg:p-6 xl:p-8 bg-primary/5 rounded-lg xl:rounded-xl">
                     <div className="flex-shrink-0">
-                      <benefit.icon className="w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8 text-primary" />
+                      <benefit.icon className="w-6 sm:w-7 lg:w-10 xl:w-12 h-6 sm:h-7 lg:h-10 xl:h-12 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground text-sm sm:text-base">{benefit.title}</h4>
-                      <p className="text-xs sm:text-sm text-muted-foreground">{benefit.description}</p>
+                      <h4 className="font-semibold text-foreground text-sm sm:text-base lg:text-lg xl:text-xl">{benefit.title}</h4>
+                      <p className="text-xs sm:text-sm lg:text-base xl:text-lg text-muted-foreground">{benefit.description}</p>
                     </div>
                   </div>)}
               </div>
@@ -124,7 +124,7 @@ const GreenCardLanding = () => {
       </section>
 
       {/* SECTION 2: HEADLINE AND SUB-HEADLINE */}
-      <section className="relative py-8 sm:py-12 lg:py-20 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden">
+      <section className="relative py-8 sm:py-12 lg:py-24 xl:py-32 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden lg:min-h-[90vh] xl:min-h-screen flex items-center">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-32 sm:w-64 h-32 sm:h-64 bg-primary rounded-full blur-3xl"></div>
@@ -132,20 +132,20 @@ const GreenCardLanding = () => {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-4 sm:space-y-6 lg:space-y-8 max-w-4xl mx-auto">
-            <div className="space-y-3 sm:space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
-                <Star className="w-3 sm:w-4 h-3 sm:h-4" />
-                <span className="text-xs sm:text-sm">+100 pessoas já conquistaram seus Green Cards</span>
+          <div className="text-center space-y-4 sm:space-y-6 lg:space-y-12 xl:space-y-16 max-w-6xl mx-auto">
+            <div className="space-y-3 sm:space-y-4 lg:space-y-8 xl:space-y-10">
+              <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 sm:px-4 lg:px-6 xl:px-8 py-1.5 sm:py-2 lg:py-3 xl:py-4 rounded-full text-xs sm:text-sm lg:text-base xl:text-lg font-medium">
+                <Star className="w-3 sm:w-4 lg:w-5 xl:w-6 h-3 sm:h-4 lg:h-5 xl:h-6" />
+                <span className="text-xs sm:text-sm lg:text-base xl:text-lg">+100 pessoas já conquistaram seus Green Cards</span>
               </div>
               
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-bold text-foreground leading-tight">
+              <h1 className="text-2xl sm:text-3xl lg:text-5xl xl:text-7xl font-bold text-foreground leading-tight">
                 Para a mulher brasileira que se sente 
                 <span className="text-primary"> perdida e sobrecarregada</span> 
                 no processo do Green Card
               </h1>
               
-              <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-2xl xl:text-3xl text-muted-foreground leading-relaxed">
                 Descubra em <strong>30 minutos</strong> o plano exato para transformar a confusão em clareza e o medo em confiança
               </p>
             </div>
@@ -169,49 +169,49 @@ const GreenCardLanding = () => {
       </section>
 
       {/* SECTION 3: FORM */}
-      <section className="py-12 sm:py-16 lg:py-20 px-3 sm:px-4 bg-muted/30">
-        <div className="max-w-2xl mx-auto">
-          <Card className="relative p-4 sm:p-6 lg:p-8 shadow-2xl border-0 bg-background/95 backdrop-blur w-full">
-            <CardContent className="space-y-4 sm:space-y-6 pt-3 sm:pt-4 p-0">
-              <div className="text-center space-y-1 sm:space-y-2">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground">
+      <section className="py-12 sm:py-16 lg:py-24 xl:py-32 px-3 sm:px-4 bg-muted/30">
+        <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto">
+          <Card className="relative p-4 sm:p-6 lg:p-10 xl:p-12 shadow-2xl border-0 bg-background/95 backdrop-blur w-full">
+            <CardContent className="space-y-4 sm:space-y-6 lg:space-y-8 xl:space-y-10 pt-3 sm:pt-4 p-0">
+              <div className="text-center space-y-1 sm:space-y-2 lg:space-y-4">
+                <h3 className="text-lg sm:text-xl lg:text-3xl xl:text-4xl font-bold text-foreground">
                   Sessão de Clareza de 30 Minutos
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground">
+                <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground">
                   Totalmente gratuita • Sem compromisso
                 </p>
               </div>
               
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
-                <div className="space-y-1.5 sm:space-y-2">
-                  <Label htmlFor="name" className="text-xs sm:text-sm font-medium">Nome completo</Label>
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4 lg:space-y-6 xl:space-y-8">
+                <div className="space-y-1.5 sm:space-y-2 lg:space-y-3">
+                  <Label htmlFor="name" className="text-xs sm:text-sm lg:text-base xl:text-lg font-medium">Nome completo</Label>
                   <Input id="name" placeholder="Digite seu nome completo" {...register("name", {
                   required: "Nome é obrigatório"
-                })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
-                  {errors.name && <p className="text-xs sm:text-sm text-destructive">{errors.name.message}</p>}
+                })} className="h-10 sm:h-12 lg:h-14 xl:h-16 border-2 border-border focus:border-primary bg-background text-sm sm:text-base lg:text-lg xl:text-xl" />
+                  {errors.name && <p className="text-xs sm:text-sm lg:text-base text-destructive">{errors.name.message}</p>}
                 </div>
                 
-                <div className="space-y-1.5 sm:space-y-2">
-                  <Label htmlFor="email" className="text-xs sm:text-sm font-medium">Seu melhor e-mail</Label>
+                <div className="space-y-1.5 sm:space-y-2 lg:space-y-3">
+                  <Label htmlFor="email" className="text-xs sm:text-sm lg:text-base xl:text-lg font-medium">Seu melhor e-mail</Label>
                   <Input id="email" type="email" placeholder="exemplo@email.com" {...register("email", {
                   required: "E-mail é obrigatório",
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                     message: "E-mail inválido"
                   }
-                })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
-                  {errors.email && <p className="text-xs sm:text-sm text-destructive">{errors.email.message}</p>}
+                })} className="h-10 sm:h-12 lg:h-14 xl:h-16 border-2 border-border focus:border-primary bg-background text-sm sm:text-base lg:text-lg xl:text-xl" />
+                  {errors.email && <p className="text-xs sm:text-sm lg:text-base text-destructive">{errors.email.message}</p>}
                 </div>
                 
-                <div className="space-y-1.5 sm:space-y-2">
-                  <Label htmlFor="phone" className="text-xs sm:text-sm font-medium">WhatsApp</Label>
+                <div className="space-y-1.5 sm:space-y-2 lg:space-y-3">
+                  <Label htmlFor="phone" className="text-xs sm:text-sm lg:text-base xl:text-lg font-medium">WhatsApp</Label>
                   <Input id="phone" placeholder="(11) 99999-9999" {...register("phone", {
                   required: "WhatsApp é obrigatório"
-                })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
-                  {errors.phone && <p className="text-xs sm:text-sm text-destructive">{errors.phone.message}</p>}
+                })} className="h-10 sm:h-12 lg:h-14 xl:h-16 border-2 border-border focus:border-primary bg-background text-sm sm:text-base lg:text-lg xl:text-xl" />
+                  {errors.phone && <p className="text-xs sm:text-sm lg:text-base text-destructive">{errors.phone.message}</p>}
                 </div>
                 
-                <Button type="submit" disabled={isSubmitting} className="w-full h-12 sm:h-14 text-sm sm:text-base lg:text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg transform transition-all duration-200 hover:scale-105 touch-manipulation mx-0 px-0">
+                <Button type="submit" disabled={isSubmitting} className="w-full h-12 sm:h-14 lg:h-16 xl:h-20 text-sm sm:text-base lg:text-xl xl:text-2xl font-bold bg-primary hover:bg-primary/90 shadow-lg transform transition-all duration-200 hover:scale-105 touch-manipulation mx-0 px-0">
                   {isSubmitting ? "Enviando..." : "🎯 QUERO MINHA CONSULTORIA GRATUITA"}
                 </Button>
                 
