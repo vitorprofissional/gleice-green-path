@@ -7,77 +7,61 @@ import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import { CheckCircle, Heart, Users, Shield, Clock, Star, ChevronDown } from "lucide-react";
-
 interface FormData {
   name: string;
   email: string;
   phone: string;
 }
-
 const GreenCardLanding = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
-  const { toast } = useToast();
+  const {
+    register,
+    handleSubmit,
+    formState: {
+      errors
+    }
+  } = useForm<FormData>();
+  const {
+    toast
+  } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    
     setTimeout(() => {
       toast({
         title: "Formulário enviado com sucesso!",
-        description: "Entraremos em contato em breve para agendar sua consultoria.",
+        description: "Entraremos em contato em breve para agendar sua consultoria."
       });
       setIsSubmitting(false);
     }, 1000);
   };
-
-  const painPoints = [
-    "Perdida em uma pilha de formulários e documentos que parecem não ter fim?",
-    "Com medo de cometer um erro que possa levar à negação do seu sonho?",
-    "Cansada de informações contraditórias que te deixam andando em círculos?",
-    "Sozinha e sobrecarregada, sentindo que ninguém entende o peso que você carrega?",
-    "Insegura até para conversar com seu noivo ou marido sobre os próximos passos?"
-  ];
-
-  const benefits = [
-    {
-      icon: Shield,
-      title: "Segurança no Processo",
-      description: "Evite erros custosos que podem resultar em negação"
-    },
-    {
-      icon: Clock,
-      title: "Economia de Tempo",
-      description: "Processo organizado e eficiente, sem perder tempo com informações erradas"
-    },
-    {
-      icon: Heart,
-      title: "Tranquilidade",
-      description: "Durma em paz sabendo que está no caminho certo"
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "Por que eu deveria fazer uma consultoria com você e não com um advogado?",
-      answer: "Porque oferecemos um atendimento humano e acolhedor, focado em organizar seus passos de forma clara e simples, sem a frieza e os altos custos de um escritório tradicional. Nosso foco é te dar confiança e direcionamento prático."
-    },
-    {
-      question: "O que exatamente acontece nessa sessão?",
-      answer: "Em 30 minutos de conversa, vamos diagnosticar seu caso atual, identificar seus maiores bloqueios e criar um plano claro com 2-3 ações imediatas que você pode executar para destravar seu processo."
-    },
-    {
-      question: "Essa sessão serve para mim se eu ainda não casei no civil?",
-      answer: "Sim! Na verdade, é ainda melhor começar o planejamento antes do casamento civil. Assim você se prepara adequadamente e evita erros que podem custar tempo e dinheiro no futuro."
-    },
-    {
-      question: "Qual o valor do investimento?",
-      answer: "O investimento para a Sessão de Clareza é de apenas $70 - muito menos do que você gastaria em uma consulta jurídica tradicional, mas com um atendimento muito mais próximo e humanizado."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const painPoints = ["Perdida em uma pilha de formulários e documentos que parecem não ter fim?", "Com medo de cometer um erro que possa levar à negação do seu sonho?", "Cansada de informações contraditórias que te deixam andando em círculos?", "Sozinha e sobrecarregada, sentindo que ninguém entende o peso que você carrega?", "Insegura até para conversar com seu noivo ou marido sobre os próximos passos?"];
+  const benefits = [{
+    icon: Shield,
+    title: "Segurança no Processo",
+    description: "Evite erros custosos que podem resultar em negação"
+  }, {
+    icon: Clock,
+    title: "Economia de Tempo",
+    description: "Processo organizado e eficiente, sem perder tempo com informações erradas"
+  }, {
+    icon: Heart,
+    title: "Tranquilidade",
+    description: "Durma em paz sabendo que está no caminho certo"
+  }];
+  const faqs = [{
+    question: "Por que eu deveria fazer uma consultoria com você e não com um advogado?",
+    answer: "Porque oferecemos um atendimento humano e acolhedor, focado em organizar seus passos de forma clara e simples, sem a frieza e os altos custos de um escritório tradicional. Nosso foco é te dar confiança e direcionamento prático."
+  }, {
+    question: "O que exatamente acontece nessa sessão?",
+    answer: "Em 30 minutos de conversa, vamos diagnosticar seu caso atual, identificar seus maiores bloqueios e criar um plano claro com 2-3 ações imediatas que você pode executar para destravar seu processo."
+  }, {
+    question: "Essa sessão serve para mim se eu ainda não casei no civil?",
+    answer: "Sim! Na verdade, é ainda melhor começar o planejamento antes do casamento civil. Assim você se prepara adequadamente e evita erros que podem custar tempo e dinheiro no futuro."
+  }, {
+    question: "Qual o valor do investimento?",
+    answer: "O investimento para a Sessão de Clareza é de apenas $70 - muito menos do que você gastaria em uma consulta jurídica tradicional, mas com um atendimento muito mais próximo e humanizado."
+  }];
+  return <div className="min-h-screen bg-background">
       {/* HERO SECTION */}
       <section className="relative py-8 sm:py-12 lg:py-20 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden">
         {/* Background Pattern */}
@@ -110,17 +94,13 @@ const GreenCardLanding = () => {
               {/* Social Proof */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6 pt-2 sm:pt-4">
                 <div className="flex -space-x-2 sm:-space-x-3">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-primary/20 rounded-full border-2 border-background flex items-center justify-center">
+                  {[1, 2, 3, 4].map(i => <div key={i} className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-primary/20 rounded-full border-2 border-background flex items-center justify-center">
                       <Users className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-primary" />
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
                 <div className="text-xs sm:text-sm text-muted-foreground">
                   <div className="flex items-center space-x-1 mb-1">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-3 sm:w-4 h-3 sm:h-4 fill-primary text-primary" />
-                    ))}
+                    {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3 sm:w-4 h-3 sm:h-4 fill-primary text-primary" />)}
                   </div>
                   <span className="font-medium text-xs sm:text-sm">Mais de 100 mulheres já conquistaram seus sonhos</span>
                 </div>
@@ -130,9 +110,7 @@ const GreenCardLanding = () => {
             {/* Form Card */}
             <Card className="relative p-4 sm:p-6 lg:p-8 shadow-2xl border-0 bg-background/95 backdrop-blur w-full order-1 lg:order-2">
               <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
-                <div className="bg-primary text-primary-foreground px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold">
-                  CONSULTORIA GRATUITA
-                </div>
+                
               </div>
               
               <CardContent className="space-y-4 sm:space-y-6 pt-3 sm:pt-4 p-0">
@@ -148,49 +126,33 @@ const GreenCardLanding = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
                   <div className="space-y-1.5 sm:space-y-2">
                     <Label htmlFor="name" className="text-xs sm:text-sm font-medium">Nome completo</Label>
-                    <Input 
-                      id="name"
-                      placeholder="Digite seu nome completo"
-                      {...register("name", { required: "Nome é obrigatório" })}
-                      className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base"
-                    />
+                    <Input id="name" placeholder="Digite seu nome completo" {...register("name", {
+                    required: "Nome é obrigatório"
+                  })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
                     {errors.name && <p className="text-xs sm:text-sm text-destructive">{errors.name.message}</p>}
                   </div>
                   
                   <div className="space-y-1.5 sm:space-y-2">
                     <Label htmlFor="email" className="text-xs sm:text-sm font-medium">Seu melhor e-mail</Label>
-                    <Input 
-                      id="email"
-                      type="email"
-                      placeholder="exemplo@email.com"
-                      {...register("email", { 
-                        required: "E-mail é obrigatório",
-                        pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: "E-mail inválido"
-                        }
-                      })}
-                      className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base"
-                    />
+                    <Input id="email" type="email" placeholder="exemplo@email.com" {...register("email", {
+                    required: "E-mail é obrigatório",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "E-mail inválido"
+                    }
+                  })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
                     {errors.email && <p className="text-xs sm:text-sm text-destructive">{errors.email.message}</p>}
                   </div>
                   
                   <div className="space-y-1.5 sm:space-y-2">
                     <Label htmlFor="phone" className="text-xs sm:text-sm font-medium">WhatsApp</Label>
-                    <Input 
-                      id="phone"
-                      placeholder="(11) 99999-9999"
-                      {...register("phone", { required: "WhatsApp é obrigatório" })}
-                      className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base"
-                    />
+                    <Input id="phone" placeholder="(11) 99999-9999" {...register("phone", {
+                    required: "WhatsApp é obrigatório"
+                  })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
                     {errors.phone && <p className="text-xs sm:text-sm text-destructive">{errors.phone.message}</p>}
                   </div>
                   
-                  <Button 
-                    type="submit" 
-                    className="w-full h-12 sm:h-14 text-sm sm:text-base lg:text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg transform transition-all duration-200 hover:scale-105 touch-manipulation"
-                    disabled={isSubmitting}
-                  >
+                  <Button type="submit" disabled={isSubmitting} className="w-full h-12 sm:h-14 text-sm sm:text-base lg:text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg transform transition-all duration-200 hover:scale-105 touch-manipulation mx-0 px-0">
                     {isSubmitting ? "Enviando..." : "🎯 QUERO MINHA CONSULTORIA GRATUITA"}
                   </Button>
                   
@@ -217,8 +179,7 @@ const GreenCardLanding = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
-            {painPoints.map((point, index) => (
-              <Card key={index} className="p-4 sm:p-6 border-l-4 border-l-primary bg-background hover:shadow-lg transition-all duration-300">
+            {painPoints.map((point, index) => <Card key={index} className="p-4 sm:p-6 border-l-4 border-l-primary bg-background hover:shadow-lg transition-all duration-300">
                 <CardContent className="flex items-start space-x-3 sm:space-x-4 p-0">
                   <div className="flex-shrink-0 mt-1">
                     <div className="w-5 sm:w-6 h-5 sm:h-6 bg-primary/10 rounded-full flex items-center justify-center">
@@ -229,8 +190,7 @@ const GreenCardLanding = () => {
                     {point}
                   </p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -241,11 +201,7 @@ const GreenCardLanding = () => {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div className="relative w-full max-w-md mx-auto lg:max-w-none order-1 lg:order-1">
               <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-primary/20 to-primary/10 rounded-2xl sm:rounded-3xl blur"></div>
-              <img 
-                src="/lovable-uploads/eea35aa1-010e-415d-a589-673fe11473c3.png" 
-                alt="Gleice Oliveira - Especialista em Green Card"
-                className="relative w-full h-auto rounded-xl sm:rounded-2xl shadow-2xl"
-              />
+              <img src="/lovable-uploads/eea35aa1-010e-415d-a589-673fe11473c3.png" alt="Gleice Oliveira - Especialista em Green Card" className="relative w-full h-auto rounded-xl sm:rounded-2xl shadow-2xl" />
               
               {/* Stats Overlay */}
               <div className="absolute -bottom-3 sm:-bottom-6 -right-3 sm:-right-6 bg-primary text-primary-foreground p-3 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl">
@@ -285,8 +241,7 @@ const GreenCardLanding = () => {
 
               {/* Benefits */}
               <div className="grid grid-cols-1 gap-3 sm:gap-4 pt-2 sm:pt-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-primary/5 rounded-lg">
+                {benefits.map((benefit, index) => <div key={index} className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-primary/5 rounded-lg">
                     <div className="flex-shrink-0">
                       <benefit.icon className="w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8 text-primary" />
                     </div>
@@ -294,8 +249,7 @@ const GreenCardLanding = () => {
                       <h4 className="font-semibold text-foreground text-sm sm:text-base">{benefit.title}</h4>
                       <p className="text-xs sm:text-sm text-muted-foreground">{benefit.description}</p>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -315,27 +269,22 @@ const GreenCardLanding = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 lg:mb-16">
-            {[
-              {
-                step: "01",
-                title: "Diagnosticar seu caso",
-                description: "Entender exatamente em que ponto do processo você está e quais os seus maiores bloqueios.",
-                icon: Shield
-              },
-              {
-                step: "02", 
-                title: "Mapear próximos passos",
-                description: "Você sairá com uma lista clara e simples de 2 a 3 ações imediatas para destravar o seu processo.",
-                icon: CheckCircle
-              },
-              {
-                step: "03",
-                title: "Trazer paz de espírito",
-                description: "Acabar com a confusão e te dar a confiança necessária para seguir em frente sem medo.",
-                icon: Heart
-              }
-            ].map((item, index) => (
-              <Card key={index} className="relative p-4 sm:p-6 lg:p-8 bg-background border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2">
+            {[{
+            step: "01",
+            title: "Diagnosticar seu caso",
+            description: "Entender exatamente em que ponto do processo você está e quais os seus maiores bloqueios.",
+            icon: Shield
+          }, {
+            step: "02",
+            title: "Mapear próximos passos",
+            description: "Você sairá com uma lista clara e simples de 2 a 3 ações imediatas para destravar o seu processo.",
+            icon: CheckCircle
+          }, {
+            step: "03",
+            title: "Trazer paz de espírito",
+            description: "Acabar com a confusão e te dar a confiança necessária para seguir em frente sem medo.",
+            icon: Heart
+          }].map((item, index) => <Card key={index} className="relative p-4 sm:p-6 lg:p-8 bg-background border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2">
                 <CardContent className="space-y-4 sm:space-y-6 p-0">
                   <div className="relative">
                     <div className="w-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16 bg-primary rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
@@ -348,16 +297,13 @@ const GreenCardLanding = () => {
                   <h3 className="text-base sm:text-lg lg:text-xl font-bold text-foreground">{item.title}</h3>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{item.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           
           <div className="space-y-4 sm:space-y-6">
-            <Button 
-              size="lg" 
-              className="w-full sm:w-auto px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 text-sm sm:text-base lg:text-xl font-bold bg-primary hover:bg-primary/90 shadow-xl transform transition-all duration-200 hover:scale-105 touch-manipulation"
-              onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button size="lg" className="w-full sm:w-auto px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 text-sm sm:text-base lg:text-xl font-bold bg-primary hover:bg-primary/90 shadow-xl transform transition-all duration-200 hover:scale-105 touch-manipulation" onClick={() => document.querySelector('form')?.scrollIntoView({
+            behavior: 'smooth'
+          })}>
               🚀 QUERO AGENDAR MINHA CONSULTORIA AGORA
             </Button>
             
@@ -383,8 +329,7 @@ const GreenCardLanding = () => {
           </div>
           
           <div className="space-y-4 sm:space-y-6">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="p-4 sm:p-6 border border-border hover:border-primary/50 transition-colors">
+            {faqs.map((faq, index) => <Card key={index} className="p-4 sm:p-6 border border-border hover:border-primary/50 transition-colors">
                 <CardContent className="space-y-3 sm:space-y-4 p-0">
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <div className="flex-shrink-0 w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8 bg-primary rounded-full flex items-center justify-center mt-0.5">
@@ -396,8 +341,7 @@ const GreenCardLanding = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -421,12 +365,9 @@ const GreenCardLanding = () => {
             </p>
             
             <div className="space-y-4 sm:space-y-6">
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="w-full sm:w-auto px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 text-sm sm:text-base lg:text-xl font-bold bg-background text-primary hover:bg-background/90 shadow-2xl transform transition-all duration-200 hover:scale-105 touch-manipulation"
-                onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
-              >
+              <Button size="lg" variant="secondary" className="w-full sm:w-auto px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 text-sm sm:text-base lg:text-xl font-bold bg-background text-primary hover:bg-background/90 shadow-2xl transform transition-all duration-200 hover:scale-105 touch-manipulation" onClick={() => document.querySelector('form')?.scrollIntoView({
+              behavior: 'smooth'
+            })}>
                 💫 SIM, QUERO MINHA CONSULTORIA GRATUITA
               </Button>
               
@@ -448,8 +389,6 @@ const GreenCardLanding = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default GreenCardLanding;
