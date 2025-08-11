@@ -108,7 +108,7 @@ const GreenCardLanding = () => {
             </div>
             
             {/* Form Card */}
-            <div className="order-1 lg:order-2 w-full">
+            <div className="order-2 lg:order-2 w-full">
               <Card className="relative p-4 sm:p-6 lg:p-8 shadow-2xl border-0 bg-background/95 backdrop-blur w-full max-w-md mx-auto lg:max-w-none">
                 <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
                   
