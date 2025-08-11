@@ -118,13 +118,33 @@ const GreenCardLanding = () => {
                     </div>
                   </div>)}
               </div>
+              
+              {/* Main Headline moved from Section 2 */}
+              <div className="space-y-4 sm:space-y-6 lg:space-y-8 xl:space-y-10 pt-4 sm:pt-6 lg:pt-8">
+                <div className="text-center">
+                  <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 sm:px-4 lg:px-6 xl:px-8 py-1.5 sm:py-2 lg:py-3 xl:py-4 rounded-full text-xs sm:text-sm lg:text-base xl:text-lg font-medium mb-4 sm:mb-6 lg:mb-8">
+                    <Star className="w-3 sm:w-4 lg:w-5 xl:w-6 h-3 sm:h-4 lg:h-5 xl:h-6" />
+                    <span className="text-xs sm:text-sm lg:text-base xl:text-lg">+100 pessoas já conquistaram seus Green Cards</span>
+                  </div>
+                  
+                  <h1 className="text-2xl sm:text-3xl lg:text-5xl xl:text-7xl font-bold text-foreground leading-tight mb-4 sm:mb-6 lg:mb-8">
+                    Para a mulher brasileira que se sente 
+                    <span className="text-primary"> perdida e sobrecarregada</span> 
+                    no processo do Green Card
+                  </h1>
+                  
+                  <p className="text-base sm:text-lg lg:text-2xl xl:text-3xl text-muted-foreground leading-relaxed max-w-5xl mx-auto">
+                    Descubra em <strong>30 minutos</strong> o plano exato para transformar a confusão em clareza e o medo em confiança
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2: HEADLINE AND SUB-HEADLINE */}
-      <section className="relative py-8 sm:py-12 lg:py-24 xl:py-32 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden lg:min-h-[90vh] xl:min-h-screen flex items-center">
+      {/* SECTION 2: SOCIAL PROOF ONLY */}
+      <section className="relative py-8 sm:py-12 lg:py-24 xl:py-32 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-32 sm:w-64 h-32 sm:h-64 bg-primary rounded-full blur-3xl"></div>
@@ -132,26 +152,9 @@ const GreenCardLanding = () => {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-4 sm:space-y-6 lg:space-y-12 xl:space-y-16 max-w-6xl mx-auto">
-            <div className="space-y-3 sm:space-y-4 lg:space-y-8 xl:space-y-10">
-              <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 sm:px-4 lg:px-6 xl:px-8 py-1.5 sm:py-2 lg:py-3 xl:py-4 rounded-full text-xs sm:text-sm lg:text-base xl:text-lg font-medium">
-                <Star className="w-3 sm:w-4 lg:w-5 xl:w-6 h-3 sm:h-4 lg:h-5 xl:h-6" />
-                <span className="text-xs sm:text-sm lg:text-base xl:text-lg">+100 pessoas já conquistaram seus Green Cards</span>
-              </div>
-              
-              <h1 className="text-2xl sm:text-3xl lg:text-5xl xl:text-7xl font-bold text-foreground leading-tight">
-                Para a mulher brasileira que se sente 
-                <span className="text-primary"> perdida e sobrecarregada</span> 
-                no processo do Green Card
-              </h1>
-              
-              <p className="text-base sm:text-lg lg:text-2xl xl:text-3xl text-muted-foreground leading-relaxed">
-                Descubra em <strong>30 minutos</strong> o plano exato para transformar a confusão em clareza e o medo em confiança
-              </p>
-            </div>
-
+          <div className="text-center">
             {/* Social Proof */}
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6 pt-2 sm:pt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6">
               <div className="flex -space-x-2 sm:-space-x-3">
                 {[1, 2, 3, 4].map(i => <div key={i} className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-primary/20 rounded-full border-2 border-background flex items-center justify-center">
                     <Users className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-primary" />
