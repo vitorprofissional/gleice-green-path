@@ -82,7 +82,7 @@ const GreenCardLanding = () => {
                 
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-bold text-foreground leading-tight">
                   Para a mulher brasileira que se sente 
-                  <span className="text-primary"> perdida e sobrecarregada</span> 
+                  <span className="text-primary"> perdida e sobrecarregada </span> 
                   no processo do Green Card
                 </h1>
                 
