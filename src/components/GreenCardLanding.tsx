@@ -107,62 +107,63 @@ const GreenCardLanding = () => {
               </div>
             </div>
             
-            {/* Form Card */}
-            <Card className="relative p-4 sm:p-6 lg:p-8 shadow-2xl border-0 bg-background/95 backdrop-blur w-full order-1 lg:order-2">
-              <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
-                
+          </div>
+          
+          {/* Form Card */}
+          <Card className="relative p-4 sm:p-6 lg:p-8 shadow-2xl border-0 bg-background/95 backdrop-blur w-full max-w-md mx-auto mt-8 sm:mt-12">
+            <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
+              
+            </div>
+            
+            <CardContent className="space-y-4 sm:space-y-6 pt-3 sm:pt-4 p-0">
+              <div className="text-center space-y-1 sm:space-y-2">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground">
+                  Sessão de Clareza de 30 Minutos
+                </h3>
+                <p className="text-sm sm:text-base text-muted-foreground">
+                  Totalmente gratuita • Sem compromisso
+                </p>
               </div>
               
-              <CardContent className="space-y-4 sm:space-y-6 pt-3 sm:pt-4 p-0">
-                <div className="text-center space-y-1 sm:space-y-2">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground">
-                    Sessão de Clareza de 30 Minutos
-                  </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground">
-                    Totalmente gratuita • Sem compromisso
-                  </p>
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
+                <div className="space-y-1.5 sm:space-y-2">
+                  <Label htmlFor="name" className="text-xs sm:text-sm font-medium">Nome completo</Label>
+                  <Input id="name" placeholder="Digite seu nome completo" {...register("name", {
+                  required: "Nome é obrigatório"
+                })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
+                  {errors.name && <p className="text-xs sm:text-sm text-destructive">{errors.name.message}</p>}
                 </div>
                 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <Label htmlFor="name" className="text-xs sm:text-sm font-medium">Nome completo</Label>
-                    <Input id="name" placeholder="Digite seu nome completo" {...register("name", {
-                    required: "Nome é obrigatório"
-                  })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
-                    {errors.name && <p className="text-xs sm:text-sm text-destructive">{errors.name.message}</p>}
-                  </div>
-                  
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <Label htmlFor="email" className="text-xs sm:text-sm font-medium">Seu melhor e-mail</Label>
-                    <Input id="email" type="email" placeholder="exemplo@email.com" {...register("email", {
-                    required: "E-mail é obrigatório",
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "E-mail inválido"
-                    }
-                  })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
-                    {errors.email && <p className="text-xs sm:text-sm text-destructive">{errors.email.message}</p>}
-                  </div>
-                  
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <Label htmlFor="phone" className="text-xs sm:text-sm font-medium">WhatsApp</Label>
-                    <Input id="phone" placeholder="(11) 99999-9999" {...register("phone", {
-                    required: "WhatsApp é obrigatório"
-                  })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
-                    {errors.phone && <p className="text-xs sm:text-sm text-destructive">{errors.phone.message}</p>}
-                  </div>
-                  
-                  <Button type="submit" disabled={isSubmitting} className="w-full h-12 sm:h-14 text-sm sm:text-base lg:text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg transform transition-all duration-200 hover:scale-105 touch-manipulation mx-0 px-0">
-                    {isSubmitting ? "Enviando..." : "🎯 QUERO MINHA CONSULTORIA GRATUITA"}
-                  </Button>
-                  
-                  <p className="text-[10px] sm:text-xs text-center text-muted-foreground leading-relaxed">
-                    ✅ 100% Gratuito • ✅ Sem spam • ✅ Seus dados estão seguros
-                  </p>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
+                <div className="space-y-1.5 sm:space-y-2">
+                  <Label htmlFor="email" className="text-xs sm:text-sm font-medium">Seu melhor e-mail</Label>
+                  <Input id="email" type="email" placeholder="exemplo@email.com" {...register("email", {
+                  required: "E-mail é obrigatório",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "E-mail inválido"
+                  }
+                })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
+                  {errors.email && <p className="text-xs sm:text-sm text-destructive">{errors.email.message}</p>}
+                </div>
+                
+                <div className="space-y-1.5 sm:space-y-2">
+                  <Label htmlFor="phone" className="text-xs sm:text-sm font-medium">WhatsApp</Label>
+                  <Input id="phone" placeholder="(11) 99999-9999" {...register("phone", {
+                  required: "WhatsApp é obrigatório"
+                })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
+                  {errors.phone && <p className="text-xs sm:text-sm text-destructive">{errors.phone.message}</p>}
+                </div>
+                
+                <Button type="submit" disabled={isSubmitting} className="w-full h-12 sm:h-14 text-sm sm:text-base lg:text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg transform transition-all duration-200 hover:scale-105 touch-manipulation mx-0 px-0">
+                  {isSubmitting ? "Enviando..." : "🎯 QUERO MINHA CONSULTORIA GRATUITA"}
+                </Button>
+                
+                <p className="text-[10px] sm:text-xs text-center text-muted-foreground leading-relaxed">
+                  ✅ 100% Gratuito • ✅ Sem spam • ✅ Seus dados estão seguros
+                </p>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
