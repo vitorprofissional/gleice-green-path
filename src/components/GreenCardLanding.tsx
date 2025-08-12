@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CheckCircle, Heart, Users, Shield, Clock, Star, ChevronDown } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 interface FormData {
   name: string;
   email: string;
@@ -28,14 +29,38 @@ const GreenCardLanding = () => {
   const navigate = useNavigate();
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    setTimeout(() => {
+    
+    try {
+      const { error } = await supabase
+        .from('gleice_leads')
+        .insert([{
+          name: data.name,
+          email: data.email,
+          phone: data.phone
+        }]);
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Formulário enviado com sucesso!",
         description: "Redirecionando para a próxima etapa..."
       });
+      
+      setTimeout(() => {
+        navigate('/obrigada');
+      }, 1000);
+    } catch (error) {
+      console.error('Erro ao salvar lead:', error);
+      toast({
+        title: "Erro ao enviar formulário",
+        description: "Tente novamente em alguns instantes.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-      navigate('/obrigada');
-    }, 1000);
+    }
   };
   const painPoints = ["Perdida em uma pilha de formulários e documentos que parecem não ter fim?", "Com medo de cometer um erro que possa levar à negação do seu sonho?", "Cansada de informações contraditórias que te deixam andando em círculos?", "Sozinha e sobrecarregada, sentindo que ninguém entende o peso que você carrega?", "Insegura até para conversar com seu noivo ou marido sobre os próximos passos?"];
   const benefits = [{
