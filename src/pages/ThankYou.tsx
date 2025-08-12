@@ -65,8 +65,7 @@ const ThankYou = () => {
               size="lg" 
               className="w-full sm:w-auto px-8 sm:px-12 lg:px-16 py-4 sm:py-6 lg:py-8 text-lg sm:text-xl lg:text-2xl font-bold bg-primary hover:bg-primary/90 shadow-xl transform transition-all duration-200 hover:scale-105 touch-manipulation"
               onClick={() => {
-                // Aqui você pode adicionar o link para agendamento
-                window.open('https://calendly.com/your-link', '_blank');
+                window.open('https://calendly.com/gleiceoliveira/freecall', '_blank');
               }}
             >
               🗓️ AGENDAR CONSULTORIA AGORA!
