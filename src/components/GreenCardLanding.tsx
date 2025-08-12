@@ -87,7 +87,7 @@ const GreenCardLanding = () => {
     answer: "Sim! Na verdade, é ainda melhor começar o planejamento antes do casamento civil. Assim você se prepara adequadamente e evita erros que podem custar tempo e dinheiro no futuro."
   }, {
     question: "Qual o valor do investimento?",
-    answer: "O investimento para a Sessão de Clareza é de apenas $70 - muito menos do que você gastaria em uma consulta jurídica tradicional, mas com um atendimento muito mais próximo e humanizado."
+    answer: "Esta consultoria custaria $70, mas agora está gratuita por tempo limitado - muito menos do que você gastaria em uma consulta jurídica tradicional, mas com um atendimento muito mais próximo e humanizado."
   }];
   return <div className="min-h-screen bg-background">
       {/* HERO SECTION */}
@@ -145,7 +145,7 @@ const GreenCardLanding = () => {
                 <CardContent className="space-y-4 sm:space-y-6 pt-3 sm:pt-4 p-0">
                   <div className="text-center space-y-1 sm:space-y-2">
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground">
-                      Sessão de Clareza de 30 Minutos
+                      Consultoria de 30 Minutos
                     </h3>
                     <p className="text-sm sm:text-base text-muted-foreground">
                       Totalmente gratuita • Sem compromisso
@@ -291,7 +291,7 @@ const GreenCardLanding = () => {
         <div className="max-w-6xl mx-auto text-center">
           <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12 lg:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground px-2">
-              Sessão de Clareza para o Green Card
+              Consultoria para o Green Card
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
               Esta não é uma consulta jurídica cheia de termos técnicos. É uma <strong>conversa de 30 minutos, de mulher para mulher</strong>, onde vamos:
@@ -339,7 +339,7 @@ const GreenCardLanding = () => {
             
             <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-3 sm:p-4 max-w-2xl mx-auto">
               <p className="text-xs sm:text-sm font-medium text-destructive">
-                ⚠️ <strong>ATENÇÃO:</strong> Para garantir um atendimento próximo e humano, as vagas para a Sessão de Clareza são limitadas por semana.
+                ⚠️ <strong>ATENÇÃO:</strong> Para garantir um atendimento próximo e humano, as vagas para a Consultoria são limitadas por semana.
               </p>
             </div>
           </div>
@@ -391,7 +391,7 @@ const GreenCardLanding = () => {
             </h2>
             
             <p className="text-base sm:text-lg lg:text-xl xl:text-2xl opacity-90 leading-relaxed max-w-3xl mx-auto px-4">
-              Você não precisa passar por isso sozinha. Clique no botão abaixo e agende sua Sessão de Clareza agora mesmo.
+              Você não precisa passar por isso sozinha. Clique no botão abaixo e agende sua Consultoria agora mesmo.
             </p>
             
             <div className="space-y-4 sm:space-y-6">
