@@ -4,9 +4,13 @@ import { CheckCircle, Star, Play } from "lucide-react";
 
 const ThankYou = () => {
   return (
-    <div className="min-h-screen bg-background">
-      {/* HERO SECTION */}
-      <section className="relative py-8 sm:py-12 lg:py-20 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden">
+    <>
+      <title>Obrigada - Consultoria Green Card | Gleice Oliveira</title>
+      <meta name="description" content="Parabéns! Formulário enviado com sucesso. Assista ao vídeo introdutório e agende sua consultoria gratuita sobre Green Card." />
+      <div className="min-h-screen bg-background">
+        {/* HERO SECTION */}
+        <main>
+          <section className="relative py-8 sm:py-12 lg:py-20 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-32 sm:w-64 h-32 sm:h-64 bg-primary rounded-full blur-3xl"></div>
@@ -49,7 +53,7 @@ const ThankYou = () => {
               {/* YouTube Video Embed */}
               <div className="relative w-full" style={{ paddingBottom: '56.25%', height: 0 }}>
                 <iframe
-                  src="https://www.youtube.com/embed/RfgC5cNBZZo"
+                  src="https://www.youtube.com/embed/Kes3TgK5-O4"
                   title="Vídeo Introdutório - Consultoria Green Card"
                   className="absolute top-0 left-0 w-full h-full rounded-lg"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -97,8 +101,10 @@ const ThankYou = () => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+        </section>
+        </main>
+      </div>
+    </>
   );
 };
 

@@ -15,6 +15,13 @@ interface FormData {
   phone: string;
 }
 const GreenCardLanding = () => {
+  // SEO Optimization for homepage
+  document.title = "Consultoria Green Card - Realize seu Sonho Americano com Gleice Oliveira";
+  
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) {
+    metaDescription.setAttribute('content', 'Consultoria especializada em Green Card para mulheres. Agende sua consultoria gratuita e descubra como conquistar seu visto americano com a especialista Gleice Oliveira.');
+  }
   const {
     register,
     handleSubmit,
@@ -91,7 +98,8 @@ const GreenCardLanding = () => {
   }];
   return <div className="min-h-screen bg-background">
       {/* HERO SECTION */}
-      <section className="relative py-8 sm:py-12 lg:py-20 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden">
+      <main>
+        <section className="relative py-8 sm:py-12 lg:py-20 px-3 sm:px-4 bg-gradient-to-br from-primary/5 via-background to-primary/10 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-32 sm:w-64 h-32 sm:h-64 bg-primary rounded-full blur-3xl"></div>
@@ -231,7 +239,7 @@ const GreenCardLanding = () => {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div className="relative w-full max-w-md mx-auto lg:max-w-none order-1 lg:order-1">
               <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-primary/20 to-primary/10 rounded-2xl sm:rounded-3xl blur"></div>
-              <img src="/lovable-uploads/eea35aa1-010e-415d-a589-673fe11473c3.png" alt="Gleice Oliveira - Especialista em Green Card" className="relative w-full h-auto rounded-xl sm:rounded-2xl shadow-2xl" />
+              <img src="/lovable-uploads/eea35aa1-010e-415d-a589-673fe11473c3.png" alt="Gleice Oliveira, especialista em consultoria Green Card para mulheres brasileiras, ajudando mais de 100 pessoas a conquistarem o visto americano" className="relative w-full h-auto rounded-xl sm:rounded-2xl shadow-2xl" />
               
               {/* Stats Overlay */}
               <div className="absolute -bottom-3 sm:-bottom-6 -right-3 sm:-right-6 bg-primary text-primary-foreground p-3 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl">
@@ -419,6 +427,7 @@ const GreenCardLanding = () => {
           </div>
         </div>
       </section>
+      </main>
     </div>;
 };
 export default GreenCardLanding;
