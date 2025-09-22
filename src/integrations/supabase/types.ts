@@ -7,7 +7,7 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "13.0.4"
@@ -21,6 +21,7 @@ export type Database = {
           id: string
           name: string
           phone: string
+          updated_at: string
         }
         Insert: {
           created_at?: string
@@ -28,6 +29,7 @@ export type Database = {
           id?: string
           name: string
           phone: string
+          updated_at?: string
         }
         Update: {
           created_at?: string
@@ -35,27 +37,7 @@ export type Database = {
           id?: string
           name?: string
           phone?: string
-        }
-        Relationships: []
-      }
-      user_roles: {
-        Row: {
-          created_at: string
-          id: string
-          role: Database["public"]["Enums"]["user_role"]
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["user_role"]
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["user_role"]
-          user_id?: string
+          updated_at?: string
         }
         Relationships: []
       }
@@ -64,13 +46,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      has_role: {
-        Args: { check_role: Database["public"]["Enums"]["user_role"] }
-        Returns: boolean
-      }
+      [_ in never]: never
     }
     Enums: {
-      user_role: "admin" | "staff" | "user"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -197,8 +176,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      user_role: ["admin", "staff", "user"],
-    },
+    Enums: {},
   },
 } as const
