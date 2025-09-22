@@ -77,7 +77,15 @@ serve(async (req) => {
         },
         body: JSON.stringify({
           ...leadData,
-          timestamp: new Date().toISOString(),
+          timestamp: new Date().toLocaleString('sv-SE', { 
+            timeZone: 'America/Sao_Paulo',
+            year: 'numeric',
+            month: '2-digit', 
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+          }).replace(' ', 'T') + '-03:00',
           source: 'green-card-landing'
         }),
       });
