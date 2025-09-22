@@ -25,6 +25,7 @@ const GreenCardLanding = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: {
       errors
     }
@@ -38,32 +39,51 @@ const GreenCardLanding = () => {
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase
-        .from('gleice_leads')
-        .insert([{
+      // Call the Edge Function instead of directly inserting into Supabase
+      const response = await supabase.functions.invoke('submit-lead', {
+        body: {
           name: data.name,
           email: data.email,
-          phone: data.phone
-        }]);
+          phone: data.phone,
+        },
+      });
 
-      if (error) {
-        throw error;
+      if (response.error) {
+        console.error('Error submitting lead:', response.error);
+        toast({
+          title: "Erro ao enviar cadastro",
+          description: "Houve um problema ao processar seu cadastro. Tente novamente.",
+          variant: "destructive",
+        });
+        return;
       }
 
+      console.log('Lead submitted successfully:', response.data);
+
+      // Show success message with Google Sheets integration info
+      const message = response.data?.googleSheets === 'success' 
+        ? "Cadastro salvo no sistema e planilha!" 
+        : "Cadastro realizado com sucesso!";
+
       toast({
-        title: "Formulário enviado com sucesso!",
-        description: "Redirecionando para a próxima etapa..."
+        title: message,
+        description: "Você receberá em breve mais informações sobre sua consulta gratuita.",
       });
-      
+
+      // Reset form
+      reset();
+
+      // Navigate to thank you page after a brief delay
       setTimeout(() => {
         navigate('/obrigada');
       }, 1000);
+      
     } catch (error) {
-      console.error('Erro ao salvar lead:', error);
+      console.error('Unexpected error:', error);
       toast({
-        title: "Erro ao enviar formulário",
-        description: "Tente novamente em alguns instantes.",
-        variant: "destructive"
+        title: "Erro ao enviar cadastro",
+        description: "Houve um problema inesperado. Tente novamente em alguns instantes.",
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
