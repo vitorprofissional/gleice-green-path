@@ -146,6 +146,31 @@ serve(async (req) => {
       googleSheetsResult = { status: 'error', message: googleError.message };
     }
 
+    // Trigger webhook after successful database insertion
+    try {
+      console.log('Triggering webhook for lead:', leadData);
+      const webhookResponse = await fetch('https://autovmd-n8n.7hn4wr.easypanel.host/webhook/cadastro-lp-gleice', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...leadData,
+          timestamp: new Date().toISOString(),
+          source: 'green-card-landing'
+        }),
+      });
+
+      if (webhookResponse.ok) {
+        console.log('Webhook triggered successfully');
+      } else {
+        console.error('Webhook failed with status:', webhookResponse.status);
+      }
+    } catch (webhookError) {
+      console.error('Webhook call failed (non-critical):', webhookError);
+      // Don't fail the entire request if webhook fails
+    }
+
     return new Response(
       JSON.stringify({ 
         success: true, 
