@@ -18,73 +18,6 @@ const supabase = createClient(
   Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
 );
 
-async function insertToGoogleSheets(leadData: LeadData): Promise<any> {
-  try {
-    const sheetId = Deno.env.get('GOOGLE_SHEET_ID');
-    const webAppUrl = Deno.env.get('GOOGLE_APPS_SCRIPT_URL'); // Optional: Google Apps Script Web App URL
-    
-    if (!sheetId) {
-      throw new Error('Missing GOOGLE_SHEET_ID');
-    }
-
-    // Prepare data for Google Sheets
-    const currentDate = new Date().toLocaleDateString('pt-BR', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      timeZone: 'America/Sao_Paulo'
-    });
-
-    console.log('Attempting to add to Google Sheets:', {
-      name: leadData.name,
-      email: leadData.email,
-      phone: leadData.phone,
-      date: currentDate,
-      sheetId: sheetId
-    });
-
-    // Method 1: Use Google Apps Script Web App (if configured)
-    if (webAppUrl) {
-      console.log('Using Google Apps Script Web App method');
-      
-      const response = await fetch(webAppUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          action: 'addLead',
-          data: {
-            name: leadData.name,
-            email: leadData.email,
-            phone: leadData.phone,
-            date: currentDate
-          }
-        }),
-      });
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Google Apps Script error:', errorText);
-        throw new Error(`Google Apps Script error: ${response.status}`);
-      }
-
-      const result = await response.json();
-      console.log('Successfully added via Google Apps Script:', result);
-      return result;
-    }
-
-    // Method 2: Use direct API approach (requires proper credentials setup)
-    console.log('Google Apps Script URL not configured, skipping Google Sheets integration');
-    return { status: 'skipped', reason: 'No Google Apps Script URL configured' };
-    
-  } catch (error) {
-    console.error('Error inserting to Google Sheets:', error);
-    throw error;
-  }
-}
 
 serve(async (req) => {
   // Handle CORS preflight requests
@@ -134,18 +67,6 @@ serve(async (req) => {
 
     console.log('Successfully inserted to Supabase:', supabaseData);
 
-    // Try to insert into Google Sheets (secondary storage)
-    let googleSheetsResult = null;
-    try {
-      console.log('Attempting Google Sheets integration for:', leadData);
-      googleSheetsResult = await insertToGoogleSheets(leadData);
-      console.log('Google Sheets integration result:', googleSheetsResult);
-    } catch (googleError) {
-      console.error('Google Sheets insertion failed (non-critical):', googleError);
-      // Don't fail the entire request if Google Sheets fails
-      googleSheetsResult = { status: 'error', message: googleError.message };
-    }
-
     // Trigger webhook after successful database insertion
     try {
       console.log('Triggering webhook for lead:', leadData);
@@ -174,8 +95,7 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         success: true, 
-        data: supabaseData,
-        googleSheets: googleSheetsResult ? 'success' : 'pending_setup'
+        data: supabaseData
       }), 
       { 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
