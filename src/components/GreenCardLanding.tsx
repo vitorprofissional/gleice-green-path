@@ -203,9 +203,18 @@ const GreenCardLanding = () => {
                     
                     <div className="space-y-1.5 sm:space-y-2">
                       <Label htmlFor="phone" className="text-xs sm:text-sm font-medium">WhatsApp</Label>
-                      <Input id="phone" placeholder="(11) 99999-9999" {...register("phone", {
-                      required: "WhatsApp é obrigatório"
-                    })} className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" />
+                      <Input 
+                        id="phone" 
+                        placeholder="+55 (11) 99999-9999" 
+                        {...register("phone", {
+                          required: "WhatsApp é obrigatório",
+                          pattern: {
+                            value: /^\+55\s?\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/,
+                            message: "WhatsApp deve conter código do país +55, DDD e número (ex: +55 11 99999-9999)"
+                          }
+                        })} 
+                        className="h-10 sm:h-12 border-2 border-border focus:border-primary bg-background text-sm sm:text-base" 
+                      />
                       {errors.phone && <p className="text-xs sm:text-sm text-destructive">{errors.phone.message}</p>}
                     </div>
                     
