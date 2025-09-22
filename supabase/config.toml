@@ -2,6 +2,3 @@ project_id = "bdkgnnkkrsdnbiznfmpu"
 
 [functions.submit-lead]
 verify_jwt = false
-
-[functions.test-webhook]
-verify_jwt = false
